@@ -1,20 +1,14 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
-"Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-fugitive'
@@ -28,7 +22,6 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
-"Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ternjs/tern_for_vim'
@@ -46,12 +39,9 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'sjl/gundo.vim'
 Plugin 'w0rp/ale'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
+
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -75,55 +65,27 @@ set number relativenumber
 set mouse=a
 imap <C-c> <CR><Esc>O
 
-set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 set path+=**
 set wildmenu
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_loc_list_height = 5
-"let g:syntastic_auto_loc_list = 0
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 1
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_error_symbol = '✗'
-"let g:syntastic_warning_symbol = '⚠'
-"let g:syntastic_html_checkers = ['htmlhint']
 
-"highlight link SyntasticErrorSign SignColumn
-"highlight link SyntasticWarningSign SignColumn
-"highlight link SyntasticStyleErrorSign SignColumn
-"highlight link SyntasticStyleWarningSign SignColumn
-
-" Airline configuration -------------------------------------------------------
+" Airline configuration
+"----------------------
 
 " Make airline to appear on all the tabs
 set laststatus=2
 
-"call airline#parts#define_function('ALE', 'ALEGetStatusLine')
-"call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
-"let g:airline_section_error = airline#section#create_right(['ALE'])
 let g:airline#extensions#ale#enabled = 1
 "let g:airline_theme='durant'
 "let g:airline_theme='powerlineish'
-" let g:airline_theme='simple'
-"let g:airline_theme='term'
-let g:airline_theme='jellybeans'
+"let g:airline_theme='simple'
+let g:airline_theme='term'
+"let g:airline_theme='jellybeans'
 
-"let g:airline_powerline_fonts = 1
-
-" powerline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
+let g:airline_powerline_fonts = 1
 
 " ale configuration
+"------------------
 
 let g:ale_fixers = { 'javascript': ['eslint', 'trim_whitespace'],}
 let g:ale_sign_error = '✗'
@@ -139,23 +101,34 @@ set completeopt-=preview
 
 map <C-l> :NERDTreeToggle<CR>
 map <leader>t :Windows<CR>
+
 " Gundo
+"------
+
 nnoremap <F5> :GundoToggle<CR>
 
-let g:vimwiki_list = [{'path': '~/Nextcloud/vimWiki/', 'path_html': '~/Nextcloud/vimWiki/html/'}]
-let g:used_javascript_libs = 'angularjs,angularui,angularrouter'
-" assuming you want to use snipmate snippet engine
+" Vimwiki
+"--------
 
+let g:vimwiki_list = [{'path': '~/Nextcloud/vimWiki/', 'path_html': '~/Nextcloud/vimWiki/html/'}]
+
+" Javascript Libs
+"----------------
+
+let g:used_javascript_libs = 'angularjs,angularui,angularrouter'
 
 " Markdown Settings
+"------------------
+
 let g:vim_markdown_folding_disabled = 1
+
 " Tern Settings
+"--------------
+"
 let g:tern_map_keys = 1
 
 nmap <leader>a :Ag <C-r><C-w><CR>
-
 nmap <leader>f :Files <CR>
-
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
