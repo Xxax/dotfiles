@@ -79,8 +79,9 @@ let g:airline#extensions#ale#enabled = 1
 "let g:airline_theme='durant'
 "let g:airline_theme='powerlineish'
 "let g:airline_theme='simple'
-let g:airline_theme='term'
+"let g:airline_theme='term'
 "let g:airline_theme='jellybeans'
+let g:airline_theme='tomorrow'
 
 let g:airline_powerline_fonts = 1
 
