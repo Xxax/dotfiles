@@ -38,9 +38,18 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'sjl/gundo.vim'
 Plugin 'w0rp/ale'
+Plugin 'OmniSharp/omnisharp-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+let g:OmniSharp_server_path = '~/dotnetbuild/omnisharp/OmniSharp.exe'
+let g:OmniSharp_server_use_mono = 1
+"let g:OmniSharp_server_type = 'roslyn'
+let g:OmniSharp_selector_ui = 'fzf'
+let g:Omnisharp_start_server = 0
+"let g:OmniSharp_prefer_global_sln = 1
+"let g:syntastic_cs_checkers = ['code_checker']
 
 set tabstop=2
 set shiftwidth=2
@@ -62,12 +71,11 @@ set background=dark
 colorscheme solarized8_dark
 set number relativenumber
 
-set mouse=a
+"set mouse=a
 imap <C-c> <CR><Esc>O
 
 set path+=**
 set wildmenu
-
 
 " Airline configuration
 "----------------------
