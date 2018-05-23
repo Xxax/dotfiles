@@ -194,3 +194,5 @@ echo
 
 screenfetch -A "Arch Linux" -t 
 #neofetch --ascii_distro arch --memory_display barinfo --disk_display barinfo  --color_blocks off
+
+echo

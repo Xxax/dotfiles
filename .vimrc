@@ -39,6 +39,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'sjl/gundo.vim'
 Plugin 'w0rp/ale'
 Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'https://git.ttu.ch/private/my-markdown.git'
+Plugin 'andreyorst/SimpleSnippets.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -92,6 +94,12 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline_theme='tomorrow'
 
 let g:airline_powerline_fonts = 1
+
+" Config SimpleSnippete
+"----------------------
+
+let g:SimpleSnippetsExpandOrJumpTrigger = "<c-Space>"
+
 
 " ale configuration
 "------------------
