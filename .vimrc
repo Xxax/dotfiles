@@ -73,11 +73,22 @@ set background=dark
 colorscheme solarized8_dark
 set number relativenumber
 
-"set mouse=a
+set mouse=n
+inoremap jk <Esc>
+
+
 imap <C-c> <CR><Esc>O
 
 set path+=**
 set wildmenu
+
+" Indent configuration
+"--------------------
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray   ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
+let g:indent_guides_guide_size = 4
+let g:indent_guides_enable_on_vim_startup = 1
 
 " Airline configuration
 "----------------------
@@ -104,7 +115,7 @@ let g:SimpleSnippetsExpandOrJumpTrigger = "<c-Space>"
 " ale configuration
 "------------------
 
-let g:ale_fixers = { 'javascript': ['eslint', 'trim_whitespace'],}
+let g:ale_fixers = { 'javascript': ['eslint', 'trim_whitespace'], 'typescript': ['tslint', 'trim_whitespace']}
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
 highlight clear ALEErrorSign

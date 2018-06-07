@@ -106,6 +106,7 @@ alias fj="jira open \$(jira i | fzf)"
 alias chromi="chromium '$1' --args --user-data-dir=.chrome --disable-web-security --remote-debugging-port=9222 --ignore-certificate-errors"
 alias ions="chromi http:localhost:8100 & ionic serve --no-open"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias ms="~/scripts/mount-secure.sh"
 
 #function chromi() {
 #  echo "$1"
