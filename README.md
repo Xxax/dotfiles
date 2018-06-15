@@ -16,5 +16,5 @@ Create a bare git repository in the .dotfiles directory
 cd
 git init --bare $HOME/.dotfiles
 config config --local status.showUntrackedFiles no
-config remote add https://github.com/.... 
+config remote add origin https://github.com/.... 
 ```
