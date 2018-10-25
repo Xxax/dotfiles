@@ -18,3 +18,5 @@ git init --bare $HOME/.dotfiles
 config config --local status.showUntrackedFiles no
 config remote add origin https://github.com/.... 
 ```
+
+ToDo: muss noch ein bisschen besser beschrieben werden
