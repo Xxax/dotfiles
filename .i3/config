@@ -284,7 +284,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 exec --no-startup-id nextcloud
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 60 -locker i3lock -k -i ~/Pictures/Skull-Hd-Wallpapers_4HkZbHy.jpg --timecolor=99999999
@@ -350,7 +350,7 @@ set $i3_color17         #0c0c0c
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	i3bar_command i3bar
+	i3bar_command i3bar -t
 	status_command i3status
 	position bottom
 
@@ -364,7 +364,8 @@ bar {
 	strip_workspace_numbers yes
 
 	colors {
-        background $i3_background
+        background #222D3290
+## $i3_background
         statusline $i3_text
         separator  $i3_separator
 
@@ -451,3 +452,6 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id davmail
 exec --no-startup-id synology-cloud-station-drive
 
+# Grab OTPs from ykman oath
+bindsym $mod+o exec yubikey-oath-dmenu --notify --clipboard clipboard
+bindsym $mod+Shift+o exec yubikey-oath-dmenu --notify --type

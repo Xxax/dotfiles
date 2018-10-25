@@ -40,18 +40,43 @@ Plugin 'sjl/gundo.vim'
 Plugin 'w0rp/ale'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'https://git.ttu.ch/private/my-markdown.git'
-Plugin 'andreyorst/SimpleSnippets.vim'
+Plugin 'lervag/vimtex'
+Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'iamcco/mathjax-support-for-mkdp'
+Plugin 'iamcco/markdown-preview.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-let g:OmniSharp_server_path = '~/dotnetbuild/omnisharp/OmniSharp.exe'
+" config markdown-preview for all files
+let g:mkdp_command_for_global = 1
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"let g:OmniSharp_server_path = '~/dotnetbuild/omnisharp/OmniSharp.exe'
+let g:OmniSharp_server_path = '/home/matthias/.vscode/extensions/ms-vscode.csharp-1.16.2/.omnisharp/1.32.5/omnisharp/OmniSharp.exe'
 let g:OmniSharp_server_use_mono = 1
-"let g:OmniSharp_server_type = 'roslyn'
-let g:OmniSharp_selector_ui = 'fzf'
+let g:OmniSharp_server_type = 'roslyn'
+"let g:OmniSharp_selector_ui = 'fzf'
 let g:Omnisharp_start_server = 0
 "let g:OmniSharp_prefer_global_sln = 1
 "let g:syntastic_cs_checkers = ['code_checker']
+
+" config vim-bookmarks
+highlight BookmarkSign ctermbg=NONE ctermfg=160
+highlight BookmarkLine ctermbg=194 ctermfg=NONE
+let g:bookmark_sign = '⚑'
+let g:bookmark_highlight_lines = 1
 
 set tabstop=2
 set shiftwidth=2
@@ -115,7 +140,7 @@ let g:SimpleSnippetsExpandOrJumpTrigger = "<c-Space>"
 " ale configuration
 "------------------
 
-let g:ale_fixers = { 'javascript': ['eslint', 'trim_whitespace'], 'typescript': ['tslint', 'trim_whitespace']}
+let g:ale_fixers = { 'javascript': ['eslint', 'trim_whitespace'], 'typescript': ['tslint', 'trim_whitespace'], 'stylesheet': ['stylelint', 'prettier'], 'markdown': ['trim_whitespace', 'remove_trailing_lines'] }
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
 highlight clear ALEErrorSign

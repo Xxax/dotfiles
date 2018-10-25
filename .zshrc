@@ -190,6 +190,15 @@ export NVM_DIR="$HOME/.nvm"
 set DEFAULT_NAME=matthias
 prompt_context(){}
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+gpg-connect-agent updatestartuptty /bye
+
 echo
 echo
 
